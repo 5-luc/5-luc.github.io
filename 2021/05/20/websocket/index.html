@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="五一, 我和小栗">
+    <meta name="keywords" content="websocket, 我和小栗">
     <meta name="description" content="我们一直快乐幸福">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>五一 | 我和小栗</title>
+    <title>websocket | 我和小栗</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -321,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">五一</h1>
+                    <h1 class="description center-align post-title">websocket</h1>
                 </div>
             </div>
         </div>
@@ -442,8 +442,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%88%B1%E6%83%85%E8%AE%B0%E5%BD%95/">
-                                <span class="chip bg-color">爱情记录</span>
+                            <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">Web前端</span>
                             </a>
                         
                     </div>
@@ -458,7 +458,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-11
+                    2021-05-20
                 </div>
                 
 
@@ -472,14 +472,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    113
+                    928
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -499,11 +499,50 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>#成都的魅力<br>————————————————————————————————</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">这是我们第一次在相隔遥远的地方一起奔赴同一个地方见面</span><br><span class="line"></span><br><span class="line">![IMG_20210503_215914.jpg](https:&#x2F;&#x2F;i.loli.net&#x2F;2021&#x2F;05&#x2F;09&#x2F;aIhqTkXDLdAR3r4.jpg)</span><br></pre></td></tr></table></figure>
-<p>###我的拍照技术挺好的<br><img src="https://i.loli.net/2021/05/09/si79qSxp2kXDMU1.jpg" alt="IMG_20210503_220441.jpg"><br>###把本来就很漂亮的你拍的如此美丽哈哈！</p>
-<p><img src="https://i.loli.net/2021/05/09/RBiYNLkmsQGFSgW.jpg" alt="IMG_20210503_220056.jpg"><br>###冰淇淋要滴到衣服上面啦<br><img src="https://i.loli.net/2021/05/09/Dv9bBdO8PXNhenT.jpg" alt="IMG_20210503_220543.jpg"><br>###随便一个抓拍就能留下我们共同走过的地方</p>
-<p><img src="https://i.loli.net/2021/05/09/qbdBs3LVfzThDF4.jpg" alt="IMG_20210504_174439.jpg"><br>###鳌山真的很不错呢<br>————————————————————————————————————</p>
+                <p><a id="more"></a></p>
+<p>之后 comet 的出现实现了内容上的实时更新，但是 HTTP 本身的问题并未解决（通信只能客户端发起），于是出现了 WebSocket 协议。</p>
+<blockquote>
+<p>comet 是一种服务器向页面推送数据的技术，实现方式有长轮询和 HTTP 流。</p>
+</blockquote>
+<h2 id="二、WebSocket-协议"><a href="#二、WebSocket-协议" class="headerlink" title="二、WebSocket 协议"></a>二、WebSocket 协议</h2><h3 id="1、概念"><a href="#1、概念" class="headerlink" title="1、概念"></a>1、概念</h3><p>WebSocket 协议是 WEB 浏览器和 WEB 服务器全双工通信的标准。诞生于 2008 年，2011 年成为国际标准，目前支持的浏览器有 Firefox 6+、Safari 5+、Chrome、iOS 4+版Safari。</p>
+<p>WebSocket 协议建立在 HTTP 协议基础之上，所以连接的发起方仍是客户端，一旦确立 WebSocket 通信连接，不论服务器还是客户端，任意一方都可直接向对方发送报文。协议的标识符是ws，加密的是wss。</p>
+<h3 id="2、特点"><a href="#2、特点" class="headerlink" title="2、特点"></a>2、特点</h3><ul>
+<li>服务器向客户直接端推送数据。</li>
+<li>首部信息量小，通信量减少。</li>
+<li>没有同源的限制。</li>
+</ul>
+<h3 id="3、通信过程"><a href="#3、通信过程" class="headerlink" title="3、通信过程"></a>3、通信过程</h3><p>WebSocket 通信需要在 HTTP 连接建立之后完成一次握手步骤。</p>
+<p>客户端向服务器发送一个请求。需要用到 HTTP 的 Upgrade、Connection 首部字段，告知服务器通信协议发生改变。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">GET /chat HTTP/1.1</span><br><span class="line">Host: server.example.com</span><br><span class="line">Upgrade: websocket</span><br><span class="line">Connection: Upgrade</span><br><span class="line">Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==</span><br><span class="line">Origin: http://example.com</span><br><span class="line">Sec-WebSocket-Protocol: chat, superchat</span><br><span class="line">Sec-WebSocket-Version: 13</span><br><span class="line"></span><br><span class="line"><span class="comment"># Sec-WebSocket-Key 字段内记录着握手过程中必不可少的键值。</span></span><br><span class="line"><span class="comment"># Sec-WebSocket-Protocol 字段内记录使用的子协议。子协议按 WebSocket 协议标准在连接分开使用时，定义那些连接的名称。</span></span><br></pre></td></tr></table></figure>
+<p>服务器收到请求后向客户端返回一个状态码 101 的响应。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 101 Switching Protocols</span><br><span class="line">Upgrade: websocket</span><br><span class="line">Connection: Upgrade</span><br><span class="line">Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=</span><br><span class="line">Sec-WebSocket-Protocol: chat</span><br><span class="line"></span><br><span class="line"><span class="comment"># Sec-WebSocket-Accept 的字段值是由握手请求中的 Sec-WebSocket-Key 的字段值生成的。</span></span><br></pre></td></tr></table></figure>
+<p>成功握手确立 WebSocket 连接之后，通信时不再使用 HTTP 的数据帧，而采用 WebSocket 独立的数据帧。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfylnc3b91j30wg0le11f.jpg" alt=""></p>
+<h3 id="4、WebSocket-API"><a href="#4、WebSocket-API" class="headerlink" title="4、WebSocket API"></a>4、WebSocket API</h3><blockquote>
+<p>更多详情 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket</a></p>
+</blockquote>
+<h4 id="1）构造函数"><a href="#1）构造函数" class="headerlink" title="1）构造函数"></a>1）构造函数</h4><p>WebSocket(url[, protocols])，返回一个 <code>WebSocket</code> 对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ws = <span class="keyword">new</span> WebSocket(url); <span class="comment">// url 是绝对 url</span></span><br></pre></td></tr></table></figure>
+<p>实例化 WebSocket 对象后，浏览器就会马上尝试创建连接。</p>
+<h4 id="2）属性"><a href="#2）属性" class="headerlink" title="2）属性"></a>2）属性</h4><ul>
+<li>readyState</li>
+</ul>
+<p>与 XHR 类似，WebSocket 也有一个表示当前状态的 readyState 属性，但是的值与 XHR 并不相同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CONNECTING：值为0，表示正在连接。</span><br><span class="line">OPEN：值为1，表示连接成功，可以通信了。</span><br><span class="line">CLOSING：值为2，表示连接正在关闭。</span><br><span class="line">CLOSED：值为3，表示连接已经关闭，或者打开连接失败。</span><br></pre></td></tr></table></figure>
+<h4 id="3）方法"><a href="#3）方法" class="headerlink" title="3）方法"></a>3）方法</h4><ul>
+<li>send：对要传输的数据进行排队。（复杂的数据，在发送之前要进行序列化）</li>
+<li>close：关闭当前链接。</li>
+</ul>
+<h4 id="4）事件"><a href="#4）事件" class="headerlink" title="4）事件"></a>4）事件</h4><p>使用 <code>addEventListener()</code> 或将一个事件监听器赋值给本接口的 <code>oneventname</code> 属性监听下面的事件。</p>
+<ul>
+<li>open：当一个 WebSocket 连接成功时触发。</li>
+<li>close：当一个 WebSocket 连接被关闭时触发。</li>
+<li>message：当通过 WebSocket 收到数据时触发。</li>
+<li>error：当一个 WebSocket 连接因错误而关闭时触发，例如无法发送数据时。</li>
+</ul>
+<h2 id="三、实战"><a href="#三、实战" class="headerlink" title="三、实战"></a>三、实战</h2><h3 id="1、客户端"><a href="#1、客户端" class="headerlink" title="1、客户端"></a>1、客户端</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> ws = <span class="keyword">new</span> WebSocket(<span class="string">"ws://localhost:8888"</span>);</span></span><br><span class="line"><span class="undefined">  </span></span><br><span class="line"><span class="javascript">  ws.onopen = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="string">'server open'</span>);</span></span><br><span class="line"><span class="javascript">    ws.send(<span class="string">'hello world, server!'</span>);</span></span><br><span class="line"><span class="undefined">  &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">  ws.onmessage = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="string">"client receive data："</span>, e.data);</span></span><br><span class="line"><span class="undefined">  &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">  ws.onclose = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="string">"server close"</span>);</span></span><br><span class="line"><span class="undefined">  &#125;;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2、服务器"><a href="#2、服务器" class="headerlink" title="2、服务器"></a>2、服务器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">const</span> WebSocket = <span class="built_in">require</span>(<span class="string">'ws'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"><span class="keyword">const</span> ws = <span class="keyword">new</span> WebSocket.Server(&#123; <span class="attr">port</span>: <span class="number">8888</span> &#125;);</span><br><span class="line"></span><br><span class="line">ws.on(<span class="string">'connection'</span>, ws =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'websocket connection'</span>);</span><br><span class="line">  </span><br><span class="line">  ws.send(<span class="string">'hello world, client!'</span>);</span><br><span class="line">  </span><br><span class="line">  ws.on(<span class="string">'open'</span>, msg =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'server open'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  ws.on(<span class="string">'message'</span>, msg =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'server receive msg：'</span>, msg);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  ws.on(<span class="string">'close'</span>, msg =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'client close'</span>,);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Koa is listening in <span class="subst">$&#123;<span class="number">3000</span>&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<div class="qr-code"></div><div class="post-tag-list">标签: <a class="post-tags" href="/tags/网络安全/">网络安全</a>
 
                 
             </div>
@@ -530,7 +569,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/05/11/%E4%BA%94%E4%B8%80/">http://example.com/2021/05/11/%E4%BA%94%E4%B8%80/</a>
+                    <a href="http://example.com/2021/05/20/websocket/">http://example.com/2021/05/20/websocket/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -568,8 +607,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%88%B1%E6%83%85%E8%AE%B0%E5%BD%95/">
-                                    <span class="chip bg-color">爱情记录</span>
+                                <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">Web前端</span>
                                 </a>
                             
                         </div>
@@ -619,13 +658,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/15/life-only-such-as-first/">
+                <a href="/2021/05/20/%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8webpack/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="life only such as first">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="为什么用webpack">
                         
-                        <span class="card-title">life only such as first</span>
+                        <span class="card-title">为什么用webpack</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -636,7 +675,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-20
                         </span>
                         <span class="publish-author">
                             
@@ -649,8 +688,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%88%B1%E6%83%85%E8%AE%B0%E5%BD%95/">
-                        <span class="chip bg-color">爱情记录</span>
+                    <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">Web前端</span>
                     </a>
                     
                 </div>
@@ -664,13 +703,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/10/%E7%BD%91%E7%BB%9C%E5%B1%82/">
+                <a href="/2021/05/20/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E6%96%B9%E6%A1%88/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="网络层">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="前端数据存储方案">
                         
-                        <span class="card-title">网络层</span>
+                        <span class="card-title">前端数据存储方案</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -681,7 +720,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-20
                             </span>
                         <span class="publish-author">
                             
@@ -694,8 +733,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
-                        <span class="chip bg-color">网络安全</span>
+                    <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">Web前端</span>
                     </a>
                     
                 </div>

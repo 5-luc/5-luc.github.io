@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="我和小栗">
+    <meta name="keywords" content="标签: 网络安全, 我和小栗">
     <meta name="description" content="我们一直快乐幸福">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>我和小栗</title>
+    <title>标签: 网络安全 | 我和小栗</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -317,56 +317,9 @@
 
 </header>
 
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -409,450 +362,63 @@
 </script>
 
 
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-                    <a href="https://github.com/5-luc" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github-alt"></i>Github
-                    </a>
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/5-luc" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:1971746296@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1971746296" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1971746296" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-</div>
-        </div>
     </div>
-
-    
 </div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
 
 <main class="content">
 
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;牛牛栗子
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            我必须是你近旁的一株木棉，做为树的形象和你站在一起。根，紧握在地下，叶，相触在云里。每一阵风过，我们都互相致意，但没有人听懂我们的言语。你有你的铜枝铁干，像刀，像剑，也像戟，我有我的红硕花朵，像沉重的叹息，又像英勇的火炬，我们分担寒潮、风雷、霹雳；我们共享雾霭流岚、虹霓，
-        </div>
-    </div>
-</div>
 
-                    
-
-                    
-
-                    
-                        <link rel="stylesheet" href="/libs/dplayer/DPlayer.min.css">
-<div class="video-player">
-    
-    <div class="title center-align">
-        <i class="fas fa-video-camera"></i>&nbsp;&nbsp;砺剑之锋
-    </div>
-    
-    <div class="row">
-		
-			<iframe src='http://www.iqiyi.com/v_14iqdjl0eqg.html?isrd=1&p1=2_22_222&social_platform=link#在bilibili或者爱奇艺分享时选择iframe，然后填那个url来这里，' scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" align="middle"  width="100%"> </iframe>
-		
-    </div>
-</div>
-
-<script src="/libs/dplayer/DPlayer.min.js"></script>
-<script>
-    $(function () {
-        new DPlayer({
-            container: document.getElementById('dplayer'),
-            autoplay: 'false' === 'true',
-            theme: '#42b983',
-            loop: 'false' === 'true',
-            lang: 'zh-CN' === 'zh-CN' ? 'zh-cn' : 'en',
-            preload: 'auto',
-            volume: Number('0.7'),
-            video: {
-                url: '',
-                pic: '',
-                thumbnails: ''
-            }
-        });
-    });
-</script>
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-
-
-<div class="title"><i class="far fa-thumbs-up"></i>&nbsp;&nbsp;推荐文章</div>
-
-<div class="row">
-
-    
-    
-    <div class="col s12" >
-        
-            <div class="post-card" style="background-image: url('/medias/featureimages/18.jpg')">
-            
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                        
-                    
-                </div>
-                <a href="/2020/09/06/page%E2%80%9C%E5%BC%80%E5%A7%8B%E5%95%A6%E2%80%9D/">
-                    <h3 class="post-title">“开始啦”</h3>
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" title="网络安全: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="网络安全" style="background-color: #F9EBEA;">网络安全
+                        <span class="tag-length">5</span>
+                    </span>
                 </a>
-                <p class="post-description">
- 你好，杨丽欢迎来到我的blog！
-We Start
-这里是我们爱情记录的开始！1$  这里开启了 &amp;quot;My New life&amp;quot;
-
-
-### Run </p>
-                <a href="/2020/09/06/page%E2%80%9C%E5%BC%80%E5%A7%8B%E5%95%A6%E2%80%9D/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
-                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                
+                
+                <a href="/tags/%E7%88%B1%E6%83%85%E8%AE%B0%E5%BD%95/" title="爱情记录: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="爱情记录" style="background-color: #F5EEF8;">爱情记录
+                        <span class="tag-length">3</span>
+                    </span>
                 </a>
+                
+                
+                <a href="/tags/Web%E5%89%8D%E7%AB%AF/" title="Web前端: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Web前端" style="background-color: #D5F5E3;">Web前端
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
-    
-
 </div>
 
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
     
 
-    
-
-    <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
-        <div class="row article-row">
+        <div class="row tags-posts">
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/09/06/page%E2%80%9C%E5%BC%80%E5%A7%8B%E5%95%A6%E2%80%9D/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="“开始啦”">
-                            
-                            <span class="card-title">“开始啦”</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
- 你好，杨丽欢迎来到我的blog！
-We Start
-这里是我们爱情记录的开始！1$  这里开启了 &quot;My New life&quot;
-
-
-### Run long·long·ago!嘻嘻
-
-1$ 我们相识💕
-
-
-
-1$ 我
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-06
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                小犹太的牛牛
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%88%B1%E6%83%85%E8%AE%B0%E5%BD%95/">
-                            <span class="chip bg-color">爱情记录</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/05/20/%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8webpack/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="为什么用webpack">
-                            
-                            <span class="card-title">为什么用webpack</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                webpack 的出现和前端模块化的发展密不可分，所以在了解 webpack 之前，需要先了解前端模块化的进化史。
-
-一、引言对于 js 的编写，不能像其他语言一样很好的支持模块化，很多程序会比较臃肿的丢在一个文件里，要把这个程序拆分开使用
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                小犹太的牛牛
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
-                            <span class="chip bg-color">Web前端</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/05/20/websocket/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="websocket">
-                            
-                            <span class="card-title">websocket</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-之后 comet 的出现实现了内容上的实时更新，但是 HTTP 本身的问题并未解决（通信只能客户端发起），于是出现了 WebSocket 协议。
-
-comet 是一种服务器向页面推送数据的技术，实现方式有长轮询和 HTTP 流。
-
-二、W
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                小犹太的牛牛
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
-                            <span class="chip bg-color">Web前端</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/05/20/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E6%96%B9%E6%A1%88/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="前端数据存储方案">
-                            
-                            <span class="card-title">前端数据存储方案</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-
-
-一、Cookie1、概念Cookie 指某些网站为了辨别用户身份而储存在用户本地终端上的数据。每次请求都会把本地的 Cookie 发到服务器，让服务器知道当前用户的状态。
-Cookie 有域的概念，不能跨域操作。
-2、适用场景适合客户
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                小犹太的牛牛
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
-                            <span class="chip bg-color">Web前端</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4" data-tags="网络安全" data-aos="fade-up">
                 <div class="card">
                     <a href="/2021/05/20/%E6%A6%82%E8%BF%B0/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="概述">
@@ -860,14 +426,7 @@ Cookie 有域的概念，不能跨域操作。
                             <span class="card-title">概述</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                2）凡是将分布在不同地理位置上的具有独立工作能力的计算机、终端及其附属设备，用通信设备和通信线路连接起来，并配置网络软件和通信协议，以实现数据传输和资源共享的系统就叫做计算机网络。
-3）Internet：译名有因特网和互联网，但是流行的是互
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2021-05-20
@@ -880,25 +439,14 @@ Cookie 有域的概念，不能跨域操作。
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
-                            <span class="chip bg-color">网络安全</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="网络安全" data-aos="fade-up">
                 <div class="card">
                     <a href="/2021/05/20/MySQL%E7%94%A8%E6%88%B7%E3%80%81%E6%9D%83%E9%99%90%E5%8F%8A%E5%AF%86%E7%A0%81%E6%93%8D%E4%BD%9C/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="MySQL用户、权限及密码操作">
@@ -906,14 +454,7 @@ Cookie 有域的概念，不能跨域操作。
                             <span class="card-title">MySQL用户、权限及密码操作</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                ### MySQL中对于用户的权限比较简单，本文主要是分为创建用户、修改用户权限、修改用户密码、删除用户等几部分，介绍MySQL对于用户权限的管理。1 创建用户###1.1 create user格式如下:
-CREATE USER &#39
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2021-05-20
@@ -926,25 +467,14 @@ CREATE USER &#39
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
-                            <span class="chip bg-color">网络安全</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="网络安全" data-aos="fade-up">
                 <div class="card">
                     <a href="/2021/05/17/%E7%89%A9%E7%90%86%E5%B1%82/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="物理层">
@@ -952,16 +482,7 @@ CREATE USER &#39
                             <span class="card-title">物理层</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                物理层一、基本概念物理层的作用的是接收数据链路层传来的0、1字符串，并把它们转换成电信号（考虑多大电压代表0、1），在传输媒体上传播，并且定义了管理这些媒体的机械，电气，功能，过程的特性。
-
-二、数据通信的基本概念
-备注：计算机通信只是数据
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2021-05-17
@@ -974,25 +495,14 @@ CREATE USER &#39
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
-                            <span class="chip bg-color">网络安全</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="网络安全" data-aos="fade-up">
                 <div class="card">
                     <a href="/2021/05/16/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="数据链路层">
@@ -1000,15 +510,7 @@ CREATE USER &#39
                             <span class="card-title">数据链路层</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                数据链路：除了物理线路外，还必须有通信协议来控制这些数据的传输。
-数据链路层的作用：把从网络层接收到的数据分割成可以被物理层传输的帧。（向网络层提供一个定义良好的服务接口；处理传输错误；调节数据流，确保慢速的接收方不会被快速的发送方淹没）
-
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2021-05-16
@@ -1021,42 +523,25 @@ CREATE USER &#39
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
-                            <span class="chip bg-color">网络安全</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="网络安全" data-aos="fade-up">
                 <div class="card">
-                    <a href="/2021/05/15/life-only-such-as-first/">
-                        <div class="card-image">
+                    <a href="/2021/05/10/%E7%BD%91%E7%BB%9C%E5%B1%82/">
+                        <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="life only such as first">
+                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="网络层">
                             
-                            <span class="card-title">life only such as first</span>
+                            <span class="card-title">网络层</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                ···If life is only as first, how good it should be, we still had the appearance of happiness, but unfortunately, time le
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-10
                             </span>
                             <span class="publish-author">
                                 
@@ -1066,94 +551,12 @@ CREATE USER &#39
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%88%B1%E6%83%85%E8%AE%B0%E5%BD%95/">
-                            <span class="chip bg-color">爱情记录</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/05/11/%E4%BA%94%E4%B8%80/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="五一">
-                            
-                            <span class="card-title">五一</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                #成都的魅力————————————————————————————————
-1234这是我们第一次在相隔遥远的地方一起奔赴同一个地方见面![IMG_20210503_215914.jpg](https:&#x2F;&#x2F;i.loli
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                小犹太的牛牛
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%88%B1%E6%83%85%E8%AE%B0%E5%BD%95/">
-                            <span class="chip bg-color">爱情记录</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
             
         </div>
     </article>
-
 </main>
-
-
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a class="left btn-floating btn-large disabled">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 2</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/2/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
-        </div>
-    </div>
-</div>
 
 
 
