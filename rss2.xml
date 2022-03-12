@@ -3,38 +3,66 @@
   xmlns:atom="http://www.w3.org/2005/Atom"
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>我和小栗</title>
+    <title>牛牛和小栗</title>
     <link>http://example.com/</link>
     
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>我们一直快乐幸福</description>
-    <pubDate>Tue, 25 May 2021 11:13:48 GMT</pubDate>
+    <pubDate>Sat, 12 Mar 2022 15:00:19 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
       <title>engine</title>
-      <link>http://example.com/2021/05/25/engine/</link>
-      <guid>http://example.com/2021/05/25/engine/</guid>
-      <pubDate>Tue, 25 May 2021 10:51:20 GMT</pubDate>
+      <link>http://example.com/2022/02/25/engine/</link>
+      <guid>http://example.com/2022/02/25/engine/</guid>
+      <pubDate>Fri, 25 Feb 2022 10:51:20 GMT</pubDate>
       
         
         
-      <description>&lt;p&gt;#&lt;a href=&quot;http://www.baidu.com/&quot;&gt;www.baidu.com&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;###&lt;a href=&quot;http://www.baidu.com/&quot;&gt;www.baidu.com&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 </description>
         
       
       
       
-      <content:encoded><![CDATA[<p>#<a href="http://www.baidu.com/">www.baidu.com</a></p><hr>]]></content:encoded>
+      <content:encoded><![CDATA[<p>###<a href="http://www.baidu.com/">www.baidu.com</a></p><hr>]]></content:encoded>
       
       
       
       <category domain="http://example.com/tags/%E6%90%9C%E7%B4%A2%E7%BD%91%E7%AB%99/">搜索网站</category>
       
       
-      <comments>http://example.com/2021/05/25/engine/#disqus_thread</comments>
+      <comments>http://example.com/2022/02/25/engine/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>“开始啦”</title>
+      <link>http://example.com/2022/02/06/page%E2%80%9C%E5%BC%80%E5%A7%8B%E5%95%A6%E2%80%9D/</link>
+      <guid>http://example.com/2022/02/06/page%E2%80%9C%E5%BC%80%E5%A7%8B%E5%95%A6%E2%80%9D/</guid>
+      <pubDate>Sun, 06 Feb 2022 13:25:41 GMT</pubDate>
+      
+        
+        
+      <description>&lt;hr&gt;
+&lt;h2 id=&quot;你好，杨丽&quot;&gt;&lt;a href=&quot;#你好，杨丽&quot; class=&quot;headerlink&quot; title=&quot; 你好，杨丽&quot;&gt;&lt;/a&gt; 你好，杨丽&lt;/h2&gt;&lt;p&gt;###欢迎来到我的blog！&lt;/p&gt;
+&lt;h3 id=&quot;这里是我们爱情记录的开始！&quot;&gt;&lt;a href=&quot;</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<hr><h2 id="你好，杨丽"><a href="#你好，杨丽" class="headerlink" title=" 你好，杨丽"></a> 你好，杨丽</h2><p>###欢迎来到我的blog！</p><h3 id="这里是我们爱情记录的开始！"><a href="#这里是我们爱情记录的开始！" class="headerlink" title="这里是我们爱情记录的开始！"></a>这里是我们爱情记录的开始！</h3><p>###我们会一直在一起的！！</p><p><img src="https://i01piccdn.sogoucdn.com/10528652845d21ef"></p>]]></content:encoded>
+      
+      
+      <category domain="http://example.com/categories/%E7%88%B1%E6%83%85%E8%AE%B0%E5%BD%95/">爱情记录</category>
+      
+      
+      <category domain="http://example.com/tags/%E6%97%A5%E5%B8%B8/">日常</category>
+      
+      
+      <comments>http://example.com/2022/02/06/page%E2%80%9C%E5%BC%80%E5%A7%8B%E5%95%A6%E2%80%9D/#disqus_thread</comments>
       
     </item>
     
@@ -269,32 +297,6 @@ if __name__ == &amp;#39;__m</description>
       
       
       <comments>http://example.com/2021/05/20/%E6%A6%82%E8%BF%B0/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>MySQL用户、权限及密码操作</title>
-      <link>http://example.com/2021/05/20/MySQL%E7%94%A8%E6%88%B7%E3%80%81%E6%9D%83%E9%99%90%E5%8F%8A%E5%AF%86%E7%A0%81%E6%93%8D%E4%BD%9C/</link>
-      <guid>http://example.com/2021/05/20/MySQL%E7%94%A8%E6%88%B7%E3%80%81%E6%9D%83%E9%99%90%E5%8F%8A%E5%AF%86%E7%A0%81%E6%93%8D%E4%BD%9C/</guid>
-      <pubDate>Thu, 20 May 2021 12:50:21 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h5 id=&quot;MySQL中对于用户的权限比较简单，本文主要是分为创建用户、修改用户权限、修改用户密码、删除用户等几部分，介绍MySQL对于用户权限的管理。&quot;&gt;&lt;a href=&quot;#MySQL中对于用户的权限比较简单，本文主要是分为创建用户、修改用户权限、修改用户密码、删除用户等几</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h5 id="MySQL中对于用户的权限比较简单，本文主要是分为创建用户、修改用户权限、修改用户密码、删除用户等几部分，介绍MySQL对于用户权限的管理。"><a href="#MySQL中对于用户的权限比较简单，本文主要是分为创建用户、修改用户权限、修改用户密码、删除用户等几部分，介绍MySQL对于用户权限的管理。" class="headerlink" title="### MySQL中对于用户的权限比较简单，本文主要是分为创建用户、修改用户权限、修改用户密码、删除用户等几部分，介绍MySQL对于用户权限的管理。"></a>### MySQL中对于用户的权限比较简单，本文主要是分为创建用户、修改用户权限、修改用户密码、删除用户等几部分，介绍MySQL对于用户权限的管理。</h5><h2 id="1-创建用户"><a href="#1-创建用户" class="headerlink" title="1 创建用户"></a>1 创建用户</h2><p>###1.1 create user<br>格式如下:</p><p><code>CREATE USER &#39;username&#39;@&#39;hostname&#39; IDENTIFIED BY &#39;password&#39;;</code></p><p>其中，username为用户名；hostname为主机，localhost指本地用户，通配符%指可以从远程主机登陆用户，如果不指定host，则默认为%；password为密码，可以为空。</p><p>例如，创建用户名为user、密码为123456的用户，主机为本地，则</p><p><code>CREATE USER &#39;user&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;123456&#39;;</code></p><p>创建用户名为user、密码为123456的用户，主机为192.168.1.1，则</p><p><code>CREATE USER &#39;user&#39;@&#39;192.168.1.1&#39; IDENTIFIED BY &#39;123456&#39;;</code></p><p>创建用户名为user、密码为123456的用户，则</p><p><code>CREATE USER &#39;user&#39; IDENTIFIED BY &#39;123456&#39;;</code></p><p>创建用户名为user，则</p><p><code>CREATE USER user;</code></p><p>####注：这种方式需要登录mysql控制台，且登录用户需要CREATE USER权限。</p><h3 id="1-2-insert-into-mysql-user"><a href="#1-2-insert-into-mysql-user" class="headerlink" title="1.2 insert into mysql.user"></a>1.2 insert into mysql.user</h3><p>格式如下：</p><p><code>INSERT INTO mysql.user(host, user, password) VALUES(hostname, username, PASSWORD(password)); FLUSH PRIVILEGES;</code></p><p>其中，mysql.user是在mysql库中存储用户信息的user表，hostname表示主机名（localhost指本地用户，通配符%指可以从远程主机登陆用户），第二个password是密码（第一个password是字段）。</p><p>例如，创建用户名为user、密码为123456的用户，则</p><p><code>INSERT INTO mysql.user(host, user, password) VALUES(&#39;localhost&#39;, &#39;user&#39;, PASSWORD(&#39;123456&#39;)); FLUSH PRIVILEGES;</code><br>####注：因为这种方式是手动修改数据库，如果想要这种修改立马生效，还需执行FLUSH PRIVILEGES命令刷新用户权限列表，所以需要登录的用户有SELECT、UPDATE、RELOAD三种权限。</p><p>##2 修改用户权限<br>###2.1 为用户赋予权限<br>在MySQL中使用GRANT命令给用户授权，如果用户不存在，GRANT会自动创建用户，并进行授权。</p><p>格式如下：</p><p><code>GRANT privileges ON databases.tablename TO &#39;username&#39;@&#39;hostname&#39; [INDENTIFIED BY ‘password’];</code></p><p>其中，privileges表示具体的权限名称，多个权限间通过逗号隔开；databases表示数据库，使用<em>表示所有数据库；tablename表示表名，使用</em>表示所有表；username表示用户名；hostname表示主机名；password表示密码，[]中用于创建用户时为用户添加密码。</p><p>###2.2 常用权限</p><p>·表数据: select, update, delete, insert</p><p>·表结构: create, alert, drop</p><p>·外键: references</p><p>·创建临时表: create temporary tables</p><p>·操作索引: index</p><p>·视图: create view, show view</p><p>·存储过程: create routine, alert routine, execute</p><p>·所有权限: all<br>###2.3 权限表<br>·存储过程权限表: mysql.procs_priv</p><p>·列权限表: mysql.columns_priv</p><p>·表格权限表: mysql.tables_priv</p><p>·用户权限表: information_schema.user_privileges（字段grantee为授权者， 字段privilege_type为权限名称）</p><p>·用户信息及权限： mysql.user（后缀为_priv的字段的值与user_privileges的privilege_type一一对应）</p><p>###2.4 查看用户权限</p><p>查看用户权限可以通过查询上面的权限表的数据进行查询，或者通过show grants命令进行查询，格式如下：</p><p><code>SHOW GRANTS [FOR username@hostname]</code></p><p>其中，username表示用户名，hostname表示主机名，[]中的内容可以省略，是查询当前登录用户的权限。</p><p>###2.5 撤销权限</p><p>可以通过命令撤销某用户的某种权限，格式如下：</p><p><code>REVOKE privileges ON databease.table FROM username@hostname</code></p><p>撤销权限与赋予权限命令相似，区别在于将TO改为FROM。</p><p>##3 修改用户密码</p><p>###3.1 mysqladmin命令</p><p>格式如下：</p><p><code>mysqladmin -u USER -p password NEW_PASSWORD</code></p><p>其中，USER为用户名，NEW_PASSWORD为新密码。</p><p>该命令直接在命令行中执行，回车之后会提示输入原密码，输入正确后即可修改。</p><p>例如，设置用户user的密码为123456，原密码为654321，则</p><p><code>mysqladmin -u user -p password 123456 Enter password:******</code></p><p>####注：上面的**是自己输入的654321。</p><p>###3.2 SET PASSWORD 语句</p><p>格式如下：</p><p><code>SET PASSWORD FOR username@hostname=PASSWORD(&#39;password&#39;);</code></p><p>其中，username为用户名，hostname为指定的主机，password为新密码。</p><p>这种方式需要先登入mysql控制台，即通过正确用户名、密码登入。</p><p>例如：设置在localhost上的用户user的密码为123456，则</p><p><code>SET PASSWORD FOR user@localhost=PASSWORD(&#39;123456&#39;);</code></p><p>####注：通过这种方式修改自己的密码，可以只有基本的USAGE权限；如果修改其他人的密码，需要对mysql数据库存在UPDATE权限。</p><p>###3.3 UPDATE user 语句</p><p>格式如下：</p><p><code>UPDATE mysql.user SET password=PASSWORD(&#39;password&#39;) WHERE user=&#39;username&#39; and host=&#39;hostname&#39;; FLUSH PRIVILEGES;</code></p><p>其中，mysql.user表示mysql库中的user表，user表示字段为user，username为用户名，password为新密码，hostname为指定的主机。</p><p>这种方式需要先登入mysql控制台，即通过正确用户名、密码登入。</p><p>例如：设置用户user的密码为123456，则</p><p><code>UPDATE mysql.user SET password=PASSWORD(&#39;123456&#39;) WHERE user=&#39;user&#39; and host=&#39;localhost&#39;; FLUSH PRIVILEGES;</code></p><p>####注：因为这种方式是手动修改数据库，如果想要这种修改立马生效，还需执行FLUSH PRIVILEGES命令刷新用户权限列表，所以需要登录的用户有SELECT、UPDATE、RELOAD三种权限。</p><p>##4 删除用户</p><p>在mysql中，可以通过直接删除mysql.user表中的数据删除用户，也可以通过drop命令删除用户，与创建用户的操作类似。</p><p>###4.1 DELETE FROM mysql.user</p><p>格式如下：</p><p><code>DELETE FROM mysql.user WHERE user=&#39;username&#39; and host=&#39;hostname&#39;</code></p><p>其中，mysql.user表示mysql库中的user表，user表示字段为user，username为用户名，hostname为指定的主机。</p><p>###4.2 DROP USER username</p><p>格式如下：</p><p><code>DROP USER &#39;username&#39;@&#39;hostname&#39;</code></p><p>其中，username为用户名，hostname为指定的主机。<br>————————————</p><p>  #mysql  #anthority  #y运维</p>]]></content:encoded>
-      
-      
-      <category domain="http://example.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</category>
-      
-      
-      <category domain="http://example.com/tags/%E7%BD%91%E5%AE%89%E5%AD%A6%E7%94%9F/">网安学生</category>
-      
-      
-      <comments>http://example.com/2021/05/20/MySQL%E7%94%A8%E6%88%B7%E3%80%81%E6%9D%83%E9%99%90%E5%8F%8A%E5%AF%86%E7%A0%81%E6%93%8D%E4%BD%9C/#disqus_thread</comments>
       
     </item>
     
