@@ -142,7 +142,7 @@
 <h2 id="8-find-查找文件或目录"><a href="#8-find-查找文件或目录" class="headerlink" title="8.find - 查找文件或目录"></a>8.find - 查找文件或目录</h2><p><code>find</code>命令用于根据你指定的参数搜索和定位文件和目录的列表。<code>find</code>命令可以在多种情况下使用，比如你可以通过权限、用户、用户组、文件类型、日期、大小和其他可能的条件来查找文件。</p>
 <p><code>find</code>命令常用使用和说明如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找指定目录下的某个文件</span></span><br><span class="line">find /etc/ -name inittab</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在当前目录下查找名称为 inittab 的文件</span></span><br><span class="line">find . -name inittab</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在当前目录下，文件不区分大小写是example的所有文件</span></span><br><span class="line">find . -iname example</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出当前目录下所有以 sh 结尾的文件</span></span><br><span class="line">find . -<span class="built_in">type</span> f -name <span class="string">&quot;*.sh&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出当前目录下，文件权限是 777 的所有文件</span></span><br><span class="line">find . -<span class="built_in">type</span> f -perm 777</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出当前目录下，文件权限不是 777 的所有文件</span></span><br><span class="line">find . -<span class="built_in">type</span> f ! -perm 777</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出当前目录下所有只读文件</span></span><br><span class="line">find . -<span class="built_in">type</span> f ! -perm /a+w</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出你帐号主目录下的所有可执行文件</span></span><br><span class="line">find ~ -<span class="built_in">type</span> f -perm /a+w</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出 /tmp 目录下的.log文件并将其删除：</span></span><br><span class="line">find /tmp/ -<span class="built_in">type</span> f -name <span class="string">&quot;*.log&quot;</span> -<span class="built_in">exec</span> rm -f &#123;&#125; \;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出当前目录下的所有空文件</span></span><br><span class="line">find . -<span class="built_in">type</span> f -empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出当前目录下的所有空目录</span></span><br><span class="line">find . -<span class="built_in">type</span> d -empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出 /tmp 目录下的所有隐藏文件</span></span><br><span class="line">find /tmp/ -<span class="built_in">type</span> f -name <span class="string">&quot;.*&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出 /tmp 目录下，所有者是 root 的文件和目录</span></span><br><span class="line">find /tmp/ -user root</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出 /tmp 目录下，用户组是 developer 的文件和目录</span></span><br><span class="line">find /tmp/ -group root</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出你账号的主目录下，3 天前修改的文件</span></span><br><span class="line">find ~ -<span class="built_in">type</span> f -mtime 3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出你账号的主目录下，30 天以前修改的所有文件</span></span><br><span class="line">find ~ -<span class="built_in">type</span> f -mtime +30</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出你账号的主目录下，3 天以内修改的所有文件</span></span><br><span class="line">find ~ -<span class="built_in">type</span> f -mtime -3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出你账号的主目录下，30 天以前，60 天以内修改的所有文件</span></span><br><span class="line">find ~ -<span class="built_in">type</span> f -mtime +30 -mtime -60</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出 /etc 目录下，一小时以内变更过的文件</span></span><br><span class="line">find /etc -<span class="built_in">type</span> f -cmin -60</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出 /etc 目录下，一小时以内访问过的文件</span></span><br><span class="line">find /etc -<span class="built_in">type</span> f -amin -60</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出你账号主目录下，大小是50MB的所有文件</span></span><br><span class="line">find ~ -<span class="built_in">type</span> f -size 50MB</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出你账号主目录下，大于50MB小于100MB的所有文件</span></span><br><span class="line">find ~ -<span class="built_in">type</span> f -size +50MB -size -100MB</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出你账号主目录下，大于100MB的文件并将其删除</span></span><br><span class="line">find ~ -<span class="built_in">type</span> f -size +100MB -<span class="built_in">exec</span> rm -rf &#123;&#125; \;</span><br></pre></td></tr></table></figure></p>
-      <div class="post-button"><a class="btn" href="/2020/10/09/%E5%B8%B8%E7%94%A8Bash%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86%E4%B9%8B%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
+      <div class="post-button"><a class="btn" href="/2020/10/09/%E5%B8%B8%E7%94%A8Bash%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86%E4%B9%8B%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
     </div>
   </div>
   <div class="lx-entry padding">
@@ -246,7 +246,7 @@
 <li>ease-in-out-quart</li>
 </ul>
 </p>
-      <div class="post-button"><a class="btn" href="/2020/10/08/%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%BB%9A%E5%8A%A8%E5%8A%A8%E7%94%BBJavaScript%E5%BA%93aos-js/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
+      <div class="post-button"><a class="btn" href="/2020/10/08/%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%BB%9A%E5%8A%A8%E5%8A%A8%E7%94%BBJavaScript%E5%BA%93aos-js/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
     </div>
   </div>
   <div class="lx-entry padding">
@@ -470,7 +470,7 @@
 <p><strong>注意</strong>：GREATEST和LEAST都不是 SQL 标准，但却是很常见的扩展。</p>
 </blockquote>
 </p>
-      <div class="post-button"><a class="btn" href="/2020/09/25/SQL%E8%AF%AD%E5%8F%A5%E6%80%BB%E7%BB%93/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
+      <div class="post-button"><a class="btn" href="/2020/09/25/SQL%E8%AF%AD%E5%8F%A5%E6%80%BB%E7%BB%93/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
     </div>
   </div>
   <div class="lx-entry padding">
@@ -1055,7 +1055,7 @@
 </ul>
 <p>参考自原文：<a target="_blank" rel="noopener" href="http://www.2ality.com/2013/06/basic-javascript.html">http://www.2ality.com/2013/06/basic-javascript.html</a><br>参考自译文：<a target="_blank" rel="noopener" href="http://yanhaijing.com/basejs/">http://yanhaijing.com/basejs/</a></p>
 </p>
-      <div class="post-button"><a class="btn" href="/2020/09/14/JavaScript%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
+      <div class="post-button"><a class="btn" href="/2020/09/14/JavaScript%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
     </div>
   </div>
   <div class="lx-entry padding">
@@ -1255,7 +1255,7 @@
 <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript">MDN</a></li>
 </ul>
 </p>
-      <div class="post-button"><a class="btn" href="/2018/10/30/JavaScript%E4%B9%8B%E5%86%8D%E5%AD%A6%E4%B9%A0/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
+      <div class="post-button"><a class="btn" href="/2018/10/30/JavaScript%E4%B9%8B%E5%86%8D%E5%AD%A6%E4%B9%A0/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
     </div>
   </div>
 
@@ -1297,21 +1297,21 @@
   </div>
   <nav class="menu-container">
   <ul class="menu-items">
-    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
-    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>Home</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
     <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-th-list fa-fw"></i>分类</span>
+      <i class="fa fa-th-list fa-fw"></i>Categories</span>
         <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%89%8D%E7%AB%AF/">Web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E7%88%AC%E8%99%AB/">python爬虫</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%88%B1%E6%83%85%E8%AE%B0%E5%BD%95/">爱情记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6/">软件</a></li></ul>
     </li>
     <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-bookmark fa-fw"></i>页面</span>
+      <i class="fa fa-bookmark fa-fw"></i>Pages</span>
         <ul>
           <li><a href="/guestbook/">Guestbook</a></li>
         <li><a href="/about/">About</a></li>
         </ul>
     </li>
     <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-link fa-fw"></i>友链</span>
+      <i class="fa fa-link fa-fw"></i>Friends</span>
         <ul>
           <li> <a href="https://www.baidu.com" target="_blank">Baidu</a></li>
         </ul>
