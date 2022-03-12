@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content=#ff00ff>
+  <title>MySQL用户、权限及密码操作 | 牛牛和小栗</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="小犹太的牛牛">
+  <meta name="keywords" content="">
+  <meta name="description" content="我们一直快乐幸福">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'lx',
+    version: '0.3.9',
+    localsearch:{
+      "enable": true,
+      "trigger": "auto",
+      "top_n_per_article": 1,
+      "unescape": false,
+      "preload": false
+      },
+    path: 'search.xml'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/logo.jpg">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/main.min.css">
+  <style type="text/css">
+    pre,
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      font-family: sans-serif;
+    }
+    h1, h2, h3, h4, h5, figure {
+      font-family: sans-serif;
+    }
+    .menu-container{
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "pink",
+	     });
+	}); 
+	</script>
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/rss2.xml" title="牛牛和小栗" type="application/rss+xml">
+</head>
+<body>
+<div class="single">
+<a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i></a>
+<div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Search..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+<div id="page">
+<div id="lx-aside" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/post_cover.jpeg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><a href="/"><img src="/images/avatar.jpg"></a></div>
+    <span>2021-05-20</span>
+    <h2>MySQL用户、权限及密...</h2>
+    <div class="tags"><i class="fa fa-tag"></i><a class="tag-none-link" href="/tags/%E7%BD%91%E5%AE%89%E5%AD%A6%E7%94%9F/" rel="tag">网安学生</a></div>
+    </div>
+</div>
+</div>
+
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <h5 id="MySQL中对于用户的权限比较简单，本文主要是分为创建用户、修改用户权限、修改用户密码、删除用户等几部分，介绍MySQL对于用户权限的管理。"><a href="#MySQL中对于用户的权限比较简单，本文主要是分为创建用户、修改用户权限、修改用户密码、删除用户等几部分，介绍MySQL对于用户权限的管理。" class="headerlink" title="### MySQL中对于用户的权限比较简单，本文主要是分为创建用户、修改用户权限、修改用户密码、删除用户等几部分，介绍MySQL对于用户权限的管理。"></a>### MySQL中对于用户的权限比较简单，本文主要是分为创建用户、修改用户权限、修改用户密码、删除用户等几部分，介绍MySQL对于用户权限的管理。</h5><h2 id="1-创建用户"><a href="#1-创建用户" class="headerlink" title="1 创建用户"></a>1 创建用户</h2><p>###1.1 create user<br>格式如下:</p>
+<p><code>CREATE USER &#39;username&#39;@&#39;hostname&#39; IDENTIFIED BY &#39;password&#39;;</code></p>
+<p>其中，username为用户名；hostname为主机，localhost指本地用户，通配符%指可以从远程主机登陆用户，如果不指定host，则默认为%；password为密码，可以为空。</p>
+<p>例如，创建用户名为user、密码为123456的用户，主机为本地，则</p>
+<p><code>CREATE USER &#39;user&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;123456&#39;;</code></p>
+<p>创建用户名为user、密码为123456的用户，主机为192.168.1.1，则</p>
+<p><code>CREATE USER &#39;user&#39;@&#39;192.168.1.1&#39; IDENTIFIED BY &#39;123456&#39;;</code></p>
+<p>创建用户名为user、密码为123456的用户，则</p>
+<p><code>CREATE USER &#39;user&#39; IDENTIFIED BY &#39;123456&#39;;</code></p>
+<p>创建用户名为user，则</p>
+<p><code>CREATE USER user;</code></p>
+<p>####注：这种方式需要登录mysql控制台，且登录用户需要CREATE USER权限。</p>
+<h3 id="1-2-insert-into-mysql-user"><a href="#1-2-insert-into-mysql-user" class="headerlink" title="1.2 insert into mysql.user"></a>1.2 insert into mysql.user</h3><p>格式如下：</p>
+<p><code>INSERT INTO mysql.user(host, user, password) VALUES(hostname, username, PASSWORD(password)); FLUSH PRIVILEGES;</code></p>
+<p>其中，mysql.user是在mysql库中存储用户信息的user表，hostname表示主机名（localhost指本地用户，通配符%指可以从远程主机登陆用户），第二个password是密码（第一个password是字段）。</p>
+<p>例如，创建用户名为user、密码为123456的用户，则</p>
+<p><code>INSERT INTO mysql.user(host, user, password) VALUES(&#39;localhost&#39;, &#39;user&#39;, PASSWORD(&#39;123456&#39;)); FLUSH PRIVILEGES;</code><br>####注：因为这种方式是手动修改数据库，如果想要这种修改立马生效，还需执行FLUSH PRIVILEGES命令刷新用户权限列表，所以需要登录的用户有SELECT、UPDATE、RELOAD三种权限。</p>
+<p>##2 修改用户权限<br>###2.1 为用户赋予权限<br>在MySQL中使用GRANT命令给用户授权，如果用户不存在，GRANT会自动创建用户，并进行授权。</p>
+<p>格式如下：</p>
+<p><code>GRANT privileges ON databases.tablename TO &#39;username&#39;@&#39;hostname&#39; [INDENTIFIED BY ‘password’];</code></p>
+<p>其中，privileges表示具体的权限名称，多个权限间通过逗号隔开；databases表示数据库，使用<em>表示所有数据库；tablename表示表名，使用</em>表示所有表；username表示用户名；hostname表示主机名；password表示密码，[]中用于创建用户时为用户添加密码。</p>
+<p>###2.2 常用权限</p>
+<p>·表数据: select, update, delete, insert</p>
+<p>·表结构: create, alert, drop</p>
+<p>·外键: references</p>
+<p>·创建临时表: create temporary tables</p>
+<p>·操作索引: index</p>
+<p>·视图: create view, show view</p>
+<p>·存储过程: create routine, alert routine, execute</p>
+<p>·所有权限: all<br>###2.3 权限表<br>·存储过程权限表: mysql.procs_priv</p>
+<p>·列权限表: mysql.columns_priv</p>
+<p>·表格权限表: mysql.tables_priv</p>
+<p>·用户权限表: information_schema.user_privileges（字段grantee为授权者， 字段privilege_type为权限名称）</p>
+<p>·用户信息及权限： mysql.user（后缀为_priv的字段的值与user_privileges的privilege_type一一对应）</p>
+<p>###2.4 查看用户权限</p>
+<p>查看用户权限可以通过查询上面的权限表的数据进行查询，或者通过show grants命令进行查询，格式如下：</p>
+<p><code>SHOW GRANTS [FOR username@hostname]</code></p>
+<p>其中，username表示用户名，hostname表示主机名，[]中的内容可以省略，是查询当前登录用户的权限。</p>
+<p>###2.5 撤销权限</p>
+<p>可以通过命令撤销某用户的某种权限，格式如下：</p>
+<p><code>REVOKE privileges ON databease.table FROM username@hostname</code></p>
+<p>撤销权限与赋予权限命令相似，区别在于将TO改为FROM。</p>
+<p>##3 修改用户密码</p>
+<p>###3.1 mysqladmin命令</p>
+<p>格式如下：</p>
+<p><code>mysqladmin -u USER -p password NEW_PASSWORD</code></p>
+<p>其中，USER为用户名，NEW_PASSWORD为新密码。</p>
+<p>该命令直接在命令行中执行，回车之后会提示输入原密码，输入正确后即可修改。</p>
+<p>例如，设置用户user的密码为123456，原密码为654321，则</p>
+<p><code>mysqladmin -u user -p password 123456 Enter password:******</code></p>
+<p>####注：上面的**是自己输入的654321。</p>
+<p>###3.2 SET PASSWORD 语句</p>
+<p>格式如下：</p>
+<p><code>SET PASSWORD FOR username@hostname=PASSWORD(&#39;password&#39;);</code></p>
+<p>其中，username为用户名，hostname为指定的主机，password为新密码。</p>
+<p>这种方式需要先登入mysql控制台，即通过正确用户名、密码登入。</p>
+<p>例如：设置在localhost上的用户user的密码为123456，则</p>
+<p><code>SET PASSWORD FOR user@localhost=PASSWORD(&#39;123456&#39;);</code></p>
+<p>####注：通过这种方式修改自己的密码，可以只有基本的USAGE权限；如果修改其他人的密码，需要对mysql数据库存在UPDATE权限。</p>
+<p>###3.3 UPDATE user 语句</p>
+<p>格式如下：</p>
+<p><code>UPDATE mysql.user SET password=PASSWORD(&#39;password&#39;) WHERE user=&#39;username&#39; and host=&#39;hostname&#39;; FLUSH PRIVILEGES;</code></p>
+<p>其中，mysql.user表示mysql库中的user表，user表示字段为user，username为用户名，password为新密码，hostname为指定的主机。</p>
+<p>这种方式需要先登入mysql控制台，即通过正确用户名、密码登入。</p>
+<p>例如：设置用户user的密码为123456，则</p>
+<p><code>UPDATE mysql.user SET password=PASSWORD(&#39;123456&#39;) WHERE user=&#39;user&#39; and host=&#39;localhost&#39;; FLUSH PRIVILEGES;</code></p>
+<p>####注：因为这种方式是手动修改数据库，如果想要这种修改立马生效，还需执行FLUSH PRIVILEGES命令刷新用户权限列表，所以需要登录的用户有SELECT、UPDATE、RELOAD三种权限。</p>
+<p>##4 删除用户</p>
+<p>在mysql中，可以通过直接删除mysql.user表中的数据删除用户，也可以通过drop命令删除用户，与创建用户的操作类似。</p>
+<p>###4.1 DELETE FROM mysql.user</p>
+<p>格式如下：</p>
+<p><code>DELETE FROM mysql.user WHERE user=&#39;username&#39; and host=&#39;hostname&#39;</code></p>
+<p>其中，mysql.user表示mysql库中的user表，user表示字段为user，username为用户名，hostname为指定的主机。</p>
+<p>###4.2 DROP USER username</p>
+<p>格式如下：</p>
+<p><code>DROP USER &#39;username&#39;@&#39;hostname&#39;</code></p>
+<p>其中，username为用户名，hostname为指定的主机。<br>————————————</p>
+<p>  #mysql  #anthority  #y运维</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2021/05/20/%E6%A6%82%E8%BF%B0/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>概述</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2021/05/17/%E7%89%A9%E7%90%86%E5%B1%82/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>物理层</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2022.<a href="/">牛牛和小栗</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
+  </div>
+</footer>
+
+</div>
+
+<button class="hamburger hamburger--arrow-r" type="button">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</button> 
+<div class="menu visibility">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="/images/avatar.jpg" alt="小犹太的牛牛"/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p>小犹太的牛牛</p>
+          <span class="tagline">牛牛和栗子的主页</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-th-list fa-fw"></i>分类</span>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%89%8D%E7%AB%AF/">Web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E7%88%AC%E8%99%AB/">python爬虫</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%88%B1%E6%83%85%E8%AE%B0%E5%BD%95/">爱情记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6/">软件</a></li></ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-bookmark fa-fw"></i>页面</span>
+        <ul>
+          <li><a href="/guestbook/">Guestbook</a></li>
+        <li><a href="/about/">About</a></li>
+        </ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-link fa-fw"></i>友链</span>
+        <ul>
+          <li> <a href="https://www.baidu.com" target="_blank">Baidu</a></li>
+        </ul>
+    </li>
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.easing.min.js"></script>
+<script>
+(function () {
+	"use strict";
+	var goToTop = function() {
+		$(".js-gotop").on("click", function(event){
+			event.preventDefault();
+			$("html, body").animate({
+				scrollTop: $("html").offset().top
+			}, 500, "easeInOutExpo");
+			return false;
+		});
+		$(window).scroll(function(){
+			var $win = $(window);
+			if ($win.scrollTop() > 200) {
+				$(".js-top").addClass("active");
+			} else {
+				$(".js-top").removeClass("active");
+			}
+		});
+	};
+	$(function(){
+		goToTop();
+	});
+}());
+</script>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/local.search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content=#ff00ff>
+  <title>常用Bash命令整理之其他常用命令 | 牛牛和小栗</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="小犹太的牛牛">
+  <meta name="keywords" content="">
+  <meta name="description" content="我们一直快乐幸福">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'lx',
+    version: '0.3.9',
+    localsearch:{
+      "enable": true,
+      "trigger": "auto",
+      "top_n_per_article": 1,
+      "unescape": false,
+      "preload": false
+      },
+    path: 'search.xml'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/logo.jpg">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/main.min.css">
+  <style type="text/css">
+    pre,
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      font-family: sans-serif;
+    }
+    h1, h2, h3, h4, h5, figure {
+      font-family: sans-serif;
+    }
+    .menu-container{
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "pink",
+	     });
+	}); 
+	</script>
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/rss2.xml" title="牛牛和小栗" type="application/rss+xml">
+</head>
+<body>
+<div class="single">
+<a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i></a>
+<div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Search..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+<div id="page">
+<div id="lx-aside" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/post_cover.jpeg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><a href="/"><img src="/images/avatar.jpg"></a></div>
+    <span>2020-10-13</span>
+    <h2>常用Bash命令整理之其...</h2>
+    <div class="tags"><i class="fa fa-tag"></i><a class="tag-none-link" href="/tags/Linux/" rel="tag">Linux</a></div>
+    </div>
+</div>
+</div>
+
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <h2 id="1-hostname-查看主机名"><a href="#1-hostname-查看主机名" class="headerlink" title="1. hostname - 查看主机名"></a>1. hostname - 查看主机名</h2><p><code>hostname</code>命令用于查看系统的主机名，或是修改系统的主机名。</p>
+<p><code>hostname</code>的常用命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示系统的当前主机名</span></span><br><span class="line">hostname</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改你系统的主机名</span></span><br><span class="line">hostname blinkfox-system</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 -F 选项，从指定的文件中读取主机名</span></span><br><span class="line">hostname -F /root/hostname.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-uptime-查看系统运行时间"><a href="#2-uptime-查看系统运行时间" class="headerlink" title="2. uptime - 查看系统运行时间"></a>2. uptime - 查看系统运行时间</h2><p><code>uptime</code>命令用于打印系统的运行时间等信息。使用如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uptime</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-w、who-列出登录的用户"><a href="#3-w、who-列出登录的用户" class="headerlink" title="3. w、who - 列出登录的用户"></a>3. w、who - 列出登录的用户</h2><p><code>w</code>命令用于显示登录用户及他们当前运行的进程。输入的内容格式如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">w</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印如下</span></span><br><span class="line">22:42  up 18 days, 1 hr, 2 users, load averages: 1.23 1.79 1.75</span><br><span class="line">USER     TTY      FROM              LOGIN@  IDLE WHAT</span><br><span class="line">blinkfox console  -                日19   6days -</span><br><span class="line">blinkfox s000     -                五23       - w</span><br></pre></td></tr></table></figure>
+
+<p><code>who</code>命令有与<code>w</code>命令类似的用途，但它的功能比<code>w</code>命令更强大一些。语法格式如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">who [OPTION]... [FILE | ARG1 ARG2]</span><br></pre></td></tr></table></figure>
+
+<p><code>who</code>常用命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示当前登录的所有用户信息</span></span><br><span class="line">who</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示系统的启动时间</span></span><br><span class="line">who -b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示系统登录进程</span></span><br><span class="line">who -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示与当前标准输入关联的用户信息</span></span><br><span class="line">who -m</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示系统的运行级别</span></span><br><span class="line">who -r</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有登录用户的用户名和登录用户数</span></span><br><span class="line">who -q</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-uname-查看系统信息"><a href="#4-uname-查看系统信息" class="headerlink" title="4. uname - 查看系统信息"></a>4. uname - 查看系统信息</h2><p><code>uname</code>命令用于打印内核名称和版本、主机名等系统信息。命令的语法如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname [OPTION]...</span><br></pre></td></tr></table></figure>
+
+<p>常用使用方式如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 只打印内核的名称</span></span><br><span class="line">uname</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 -n 选项，只打印系统的主机名</span></span><br><span class="line">uname -n</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 -r 选项，打印内核版本信息</span></span><br><span class="line">uname -r</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 -m 选项，打印系统的硬件名称</span></span><br><span class="line">uname -m</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 -p 选项，打印系统的处理器类型信息</span></span><br><span class="line">uname -p</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 -i 选项，打印系统的硬件平台信息</span></span><br><span class="line">uname -i</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 -a 选项，打印上述所有示例中的信息</span></span><br><span class="line">uname -a</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-date-显示和设置系统日期和时间"><a href="#5-date-显示和设置系统日期和时间" class="headerlink" title="5. date - 显示和设置系统日期和时间"></a>5. date - 显示和设置系统日期和时间</h2><p><code>date</code>命令用于以多种格式显示日期和时间，或设置系统的日期和时间。<code>date</code>命令的语法如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">date [OPTION]... [+FORMAT]</span><br><span class="line">date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]</span><br></pre></td></tr></table></figure>
+
+<p>常用使用命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以默认格式显示系统的当前日期时间</span></span><br><span class="line">date</span><br><span class="line"></span><br><span class="line"><span class="comment"># 格式化当前日期</span></span><br><span class="line">date +<span class="string">&quot;%Y-%m-%d&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 格式化输出昨天的日期</span></span><br><span class="line">date -d <span class="string">&quot;1 day ago&quot;</span> +<span class="string">&quot;%Y-%m-%d&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2秒后格式化输出</span></span><br><span class="line">date -d <span class="string">&quot;2 second&quot;</span> +<span class="string">&quot;%Y-%m-%d %H:%M.%S&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 普通格式化转出</span></span><br><span class="line">date -d <span class="string">&quot;2009-12-12&quot;</span> +<span class="string">&quot;%Y/%m/%d %H:%M.%S&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># apache格式转换</span></span><br><span class="line">date -d <span class="string">&quot;Dec 5, 2009 12:00:37 AM&quot;</span> +<span class="string">&quot;%Y-%m-%d %H:%M.%S&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 日期加减操作</span></span><br><span class="line">date +%Y%m%d <span class="comment">#显示前天年月日</span></span><br><span class="line">date -d <span class="string">&quot;+1 day&quot;</span> +%Y%m%d <span class="comment">#显示前一天的日期</span></span><br><span class="line">date -d <span class="string">&quot;-1 day&quot;</span> +%Y%m%d <span class="comment">#显示后一天的日期</span></span><br><span class="line">date -d <span class="string">&quot;-1 month&quot;</span> +%Y%m%d <span class="comment">#显示上一月的日期</span></span><br><span class="line">date -d <span class="string">&quot;+1 month&quot;</span> +%Y%m%d <span class="comment">#显示下一月的日期</span></span><br><span class="line">date -d <span class="string">&quot;-1 year&quot;</span> +%Y%m%d <span class="comment">#显示前一年的日期</span></span><br><span class="line">date -d <span class="string">&quot;+1 year&quot;</span> +%Y%m%d <span class="comment">#显示下一年的日期</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定时间</span></span><br><span class="line">date -s <span class="comment"># 设置当前时间，只有root权限才能设置，其他只能查看</span></span><br><span class="line">date -s 20160816 <span class="comment"># 设置成20160816，这样会把具体时间设置成空00:00:00</span></span><br><span class="line">date -s 01:01:01 <span class="comment"># 设置具体时间，不会对日期做更改</span></span><br><span class="line">date -s <span class="string">&quot;01:01:01 2012-05-23&quot;</span> <span class="comment"># 这样可以设置全部时间 </span></span><br><span class="line">date -s <span class="string">&quot;01:01:01 20120523&quot;</span> <span class="comment"># 这样可以设置全部时间</span></span><br><span class="line">date -s <span class="string">&quot;2012-05-23 01:01:01&quot;</span> <span class="comment"># 这样可以设置全部时间 </span></span><br><span class="line">date -s <span class="string">&quot;20120523 01:01:01&quot;</span> <span class="comment"># 这样可以设置全部时间</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-id-显示用户属性"><a href="#6-id-显示用户属性" class="headerlink" title="6. id - 显示用户属性"></a>6. id - 显示用户属性</h2><p><code>id</code>命令用于打印输出用户<code>uid</code>、<code>gid</code>、用户名和组名等用户身份信息。<code>id</code>命令的语法如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id [OPTION]... [USERNAME]</span><br></pre></td></tr></table></figure>
+
+<p>常见使用命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出当前用户的uid、用户名、gid、组名及用户属于的群组信息</span></span><br><span class="line">id</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 -u 选项，输出用户的 uid</span></span><br><span class="line">id -u</span><br><span class="line"></span><br><span class="line"><span class="comment">#-u 选项和 -n 选项结合使用，输出账户的用户名</span></span><br><span class="line">id -un</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 -g 选项，输出帐号当前起作用的gid</span></span><br><span class="line">id -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># -g 与 -n 选项结合使用，输出帐号当前起作用的用户组名</span></span><br><span class="line">id -gn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 -G 选项，输出帐号所属的所有群组id</span></span><br><span class="line">id -G root</span><br><span class="line"></span><br><span class="line"><span class="comment"># -G 与 -n 选项结合使用，输出账号所属的所有群组的名称</span></span><br><span class="line">id -Gn root</span><br></pre></td></tr></table></figure>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2021/05/04/%E5%BA%94%E7%94%A8%E5%B1%82/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>应用层</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2020/10/11/%E5%B8%B8%E7%94%A8Bash%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86%E4%B9%8B%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>常用Bash命...</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2022.<a href="/">牛牛和小栗</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
+  </div>
+</footer>
+
+</div>
+
+<button class="hamburger hamburger--arrow-r" type="button">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</button> 
+<div class="menu visibility">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="/images/avatar.jpg" alt="小犹太的牛牛"/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p>小犹太的牛牛</p>
+          <span class="tagline">牛牛和栗子的主页</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-th-list fa-fw"></i>分类</span>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%89%8D%E7%AB%AF/">Web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E7%88%AC%E8%99%AB/">python爬虫</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%88%B1%E6%83%85%E8%AE%B0%E5%BD%95/">爱情记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6/">软件</a></li></ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-bookmark fa-fw"></i>页面</span>
+        <ul>
+          <li><a href="/guestbook/">Guestbook</a></li>
+        <li><a href="/about/">About</a></li>
+        </ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-link fa-fw"></i>友链</span>
+        <ul>
+          <li> <a href="https://www.baidu.com" target="_blank">Baidu</a></li>
+        </ul>
+    </li>
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.easing.min.js"></script>
+<script>
+(function () {
+	"use strict";
+	var goToTop = function() {
+		$(".js-gotop").on("click", function(event){
+			event.preventDefault();
+			$("html, body").animate({
+				scrollTop: $("html").offset().top
+			}, 500, "easeInOutExpo");
+			return false;
+		});
+		$(window).scroll(function(){
+			var $win = $(window);
+			if ($win.scrollTop() > 200) {
+				$(".js-top").addClass("active");
+			} else {
+				$(".js-top").removeClass("active");
+			}
+		});
+	};
+	$(function(){
+		goToTop();
+	});
+}());
+</script>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/local.search.js"></script>
+
+</body>
+</html>
